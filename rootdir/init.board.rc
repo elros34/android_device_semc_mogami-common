@@ -16,11 +16,11 @@ on boot
     chmod 0666 /sys/devices/i2c-0/0-0054/nburst
 
     # Load wl1271 modules
-    insmod /system/lib/modules/compat.ko
-    insmod /system/lib/modules/cfg80211.ko
-    insmod /system/lib/modules/mac80211.ko
-    insmod /system/lib/modules/wl12xx.ko
-    setprop persist.wlan.ti.calibrated 0
+    # insmod /system/lib/modules/compat.ko
+    # insmod /system/lib/modules/cfg80211.ko
+    # insmod /system/lib/modules/mac80211.ko
+    # insmod /system/lib/modules/wl12xx.ko
+    # setprop persist.wlan.ti.calibrated 0
 
 # Shared transport user space mgr service for Bluetooth & FM
 service uim /system/bin/uim-sysfs
@@ -114,5 +114,5 @@ service wifi-crda /system/bin/sh /system/etc/init.crda.sh
     oneshot
 
 # We need to set the right calibration data
-on property:persist.wlan.ti.calibrated=0
-    start wifi_calibrator
+# on property:persist.wlan.ti.calibrated=0
+#     start wifi_calibrator
